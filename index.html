@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Giving Up the Share: Relinquishment of Inheritance by Muslim Women in Bangladesh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#163229;
+  --green2:#1f4236;
+  --gold:#c9a85c;
+  --cream:#f7f3e6;
+  --paper:#faf7ee;
+  --mute:#a9bdb3;
+  --ink:#163229;
+  --line:#d9d2bb;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#0c1a15;overflow:hidden;font-family:'Lato','Segoe UI',Arial,sans-serif}
+#viewport{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+#stage{width:1456px;height:818px;position:relative;transform-origin:center center;flex:none}
+.slide{position:absolute;inset:0;display:none;padding:56px 66px 70px;overflow:hidden}
+.slide.active{display:block}
+.slide.light{background:var(--paper);color:var(--ink)}
+.slide.dark{background:var(--green);color:var(--cream)}
+
+.eyebrow{font-weight:900;font-size:15px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.light .eyebrow{color:#a88533}
+h1,h2{font-family:'Lora',Georgia,'Times New Roman',serif;font-weight:700;line-height:1.15}
+h2{font-size:44px;margin:14px 0 30px;color:var(--green)}
+.dark h2{color:var(--cream)}
+.foot{position:absolute;left:66px;right:66px;bottom:26px;display:flex;justify-content:space-between;font-size:14px;color:#6f7f76;border-top:1px solid var(--line);padding-top:10px}
+.dark .foot{color:var(--mute);border-color:#34503f}
+
+/* cover */
+.cover h1{font-size:56px;color:var(--cream);margin-top:42px;max-width:1000px}
+.cover .sub{position:absolute;left:66px;top:470px;font-size:27px;color:var(--mute)}
+.cover .ar{position:absolute;right:76px;top:400px;font-size:150px;color:#4a5a3e;font-family:'Amiri','Noto Naskh Arabic','Segoe UI',Arial,serif;line-height:1}
+.cover .by{position:absolute;left:66px;right:66px;top:626px;border-top:1px solid #34503f;padding-top:24px}
+.cover .by .names{font-size:24px;margin-top:10px;color:var(--cream)}
+.cover .by .names i{font-style:normal;color:var(--mute);margin:0 10px}
+.cover .date{position:absolute;right:66px;top:698px;font-size:21px;color:var(--mute)}
+
+/* generic */
+.grid{display:grid;gap:26px}
+.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:26px 28px}
+.card.g{background:var(--green);color:var(--cream);border-color:var(--green)}
+.card h3{font-family:'Lora',Georgia,serif;font-size:26px;margin-bottom:10px;color:var(--green)}
+.card.g h3{color:var(--gold)}
+.card p{font-size:21px;line-height:1.45}
+.label{font-weight:900;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:#a88533;margin-bottom:10px}
+.g .label{color:var(--gold)}
+.big{font-family:'Lora',Georgia,serif;font-weight:700;font-size:78px;color:var(--green);line-height:1}
+.src{font-size:15px;color:#6f7f76;margin-top:10px;font-style:italic}
+.g .src{color:var(--mute)}
+.callout{border-left:6px solid var(--gold);background:#fff;padding:18px 24px;font-size:22px;line-height:1.45;border-radius:0 8px 8px 0}
+.callout b{color:#a88533;letter-spacing:.14em;font-size:15px;text-transform:uppercase;margin-right:12px}
+
+table{width:100%;border-collapse:collapse;font-size:21px;background:#fff;border:1px solid var(--line)}
+th{background:var(--green);color:var(--gold);text-align:left;font-size:15px;letter-spacing:.14em;text-transform:uppercase;padding:14px 18px}
+td{padding:14px 18px;border-top:1px solid var(--line);vertical-align:top;line-height:1.4}
+td:first-child{font-weight:700;color:var(--green)}
+ol.num,ul.dot{margin-left:0;list-style:none}
+ul.dot li{font-size:22px;line-height:1.45;padding-left:26px;position:relative;margin-bottom:8px}
+ul.dot li:before{content:"";position:absolute;left:0;top:12px;width:9px;height:9px;border-radius:50%;background:var(--gold)}
+ol.num li{font-size:22px;margin-bottom:8px}
+ol.num li span{color:#a88533;font-weight:900;margin-right:10px}
+.quote{font-family:'Lora',Georgia,serif;font-size:30px;font-style:italic}
+.rec{display:flex;gap:22px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 24px;margin-bottom:14px}
+.rec .n{font-family:'Lora',Georgia,serif;font-size:40px;font-weight:700;color:var(--gold);width:40px;line-height:1.1}
+.rec h3{font-size:23px;font-family:'Lato',sans-serif;font-weight:900;color:var(--green);margin-bottom:3px}
+.rec p{font-size:20px;color:#3d5249;line-height:1.35}
+
+/* conclusion / thanks */
+.concl .stmt{font-family:'Lora',Georgia,serif;font-size:46px;line-height:1.3;color:var(--cream);margin:60px 0 40px;max-width:1150px}
+.concl .stmt+p{font-size:26px;color:var(--mute);max-width:1050px;line-height:1.5}
+.thanks h2{font-size:64px;margin:10px 0 8px}
+.thanks .q{font-size:24px;color:var(--mute);margin-bottom:22px}
+.thanks .nm{font-size:22px;color:var(--cream);line-height:1.5;margin-bottom:34px}
+.thanks ul{list-style:none;font-size:17px;line-height:1.55;color:var(--mute);column-count:2;column-gap:50px}
+.thanks ul li{margin-bottom:6px;break-inside:avoid;padding-left:16px;position:relative}
+.thanks ul li:before{content:"•";position:absolute;left:0;color:var(--gold)}
+
+/* UI */
+.nav{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:10px;align-items:center;z-index:10;opacity:.0;transition:opacity .25s}
+body:hover .nav{opacity:.9}
+.nav button{background:rgba(22,50,41,.9);color:#f7f3e6;border:1px solid #c9a85c;border-radius:6px;padding:7px 16px;font-size:16px;cursor:pointer}
+.nav span{color:#cdd8d1;font-size:14px;min-width:60px;text-align:center}
+#bar{position:fixed;left:0;top:0;height:4px;background:var(--gold);width:0;transition:width .25s;z-index:11}
+@media print{
+  html,body{overflow:visible;height:auto;background:#fff}
+  #viewport{position:static;display:block}
+  #stage{transform:none!important;width:auto;height:auto}
+  .slide{display:block!important;position:relative;width:1456px;height:818px;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .nav,#bar{display:none}
+  @page{size:1456px 818px;margin:0}
+}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<div id="viewport"><div id="stage">
+
+<!-- 1 COVER -->
+<section class="slide dark cover">
+  <div class="eyebrow">Presentation · Muslim Family and Property Law</div>
+  <h1>Giving Up the Share: Relinquishment of Inheritance by Muslim Women in Bangladesh</h1>
+  <div class="sub">Religious entitlement vs. practical reality under Sharia and statute</div>
+  <div class="ar">ميراث</div>
+  <div class="by">
+    <div class="eyebrow">Presented by</div>
+    <div class="names">Arian Islam<i>·</i>Zakaria<i>·</i>Rezwana Faiza Maliha<i>·</i>Syed Almas Uddin Razin</div>
+  </div>
+  <div class="date">14 November 2026</div>
+</section>
+
+<!-- 2 PROBLEM -->
+<section class="slide light">
+  <div class="eyebrow">The Problem</div>
+  <h2>A fixed share that is often given away</h2>
+  <div class="grid" style="grid-template-columns:420px 1fr;gap:34px">
+    <div class="card g" style="padding:34px 30px">
+      <div class="big" style="color:var(--gold)">&lt; 25%</div>
+      <p style="margin-top:18px;font-size:23px">of the land Muslim women are entitled to inherit is actually owned by them</p>
+      <div class="src">Abul Barkat (2015), reported in The Daily Star</div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:22px">
+        <div class="label">Research Question</div>
+        <p style="font-family:'Lora',Georgia,serif;font-size:27px;line-height:1.35">Does the law of relinquishment in Bangladesh separate a sister’s genuine choice from a transfer forced by family pressure?</p>
+      </div>
+      <div class="label">We Ask</div>
+      <ol class="num">
+        <li><span>1.</span>What does Islamic Sharia say?</li>
+        <li><span>2.</span>What do the statutes of Bangladesh say?</li>
+        <li><span>3.</span>How have the courts decided?</li>
+        <li><span>4.</span>What reform is needed?</li>
+      </ol>
+      <p style="font-size:18px;color:#3d5249;margin-top:12px;line-height:1.45"><b>Method:</b> doctrinal study of the Quran, Hanafi texts, Bangladeshi statutes, and judgments from Bangladesh, India and Pakistan.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Relinquishment of Inheritance by Muslim Women in Bangladesh</span><span>2</span></div>
+</section>
+
+<!-- 3 ENTITLEMENT -->
+<section class="slide light">
+  <div class="eyebrow">Islamic Sharia · The Entitlement</div>
+  <h2>Her share is fixed, and it is compulsory</h2>
+  <div class="grid" style="grid-template-columns:1fr 430px;gap:34px">
+    <table>
+      <tr><th>Female heir</th><th>Share (Quran 4:11, 4:12, 4:176)</th></tr>
+      <tr><td>Daughter, with a son</td><td>Half of a son’s share</td></tr>
+      <tr><td>Daughter, alone</td><td>One-half</td></tr>
+      <tr><td>Two or more daughters</td><td>Two-thirds, shared equally</td></tr>
+      <tr><td>Wife</td><td>One-eighth with children; one-fourth without</td></tr>
+      <tr><td>Mother</td><td>One-sixth with children; otherwise usually one-third</td></tr>
+    </table>
+    <div>
+      <div class="card g" style="padding:30px">
+        <div class="label">Hanafi Law</div>
+        <div class="quote" style="color:var(--cream);margin:6px 0 4px">Al-irth jabri</div>
+        <p style="font-size:23px">“Inheritance is compulsory.”</p>
+        <p style="margin-top:16px;color:var(--mute)">An heir who says “I give up my share” still owns it.</p>
+        <div class="src">Ibn Abidin, Radd al-Muhtar</div>
+      </div>
+      <p style="font-size:19px;margin-top:22px;line-height:1.45;color:#3d5249">The Quran calls these shares “the limits of Allah” (4:13–14).</p>
+    </div>
+  </div>
+  <div class="foot"><span>Relinquishment of Inheritance by Muslim Women in Bangladesh</span><span>3</span></div>
+</section>
+
+<!-- 4 GIVING IT UP -->
+<section class="slide light">
+  <div class="eyebrow">Islamic Sharia · Giving It Up</div>
+  <h2>She may part with her share only by a real transaction</h2>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:26px">
+    <div class="card"><h3>Gift (hiba)</h3><p>After the death the share is hers, and she may give it away freely.</p></div>
+    <div class="card"><h3>Sale</h3><p>She may sell her share for a price.</p></div>
+    <div class="card"><h3>Takharuj</h3><p>All heirs agree she withdraws for property or money. Hanafi law treats it as an exchange, so it needs real value.</p></div>
+  </div>
+  <p class="quote" style="color:var(--green);margin:8px 0 26px">“…except trade by mutual consent.” <span style="font-size:18px;font-style:normal;color:#6f7f76;font-family:'Lato',sans-serif">Quran 4:29</span></p>
+  <div class="callout"><b>Before death</b>She has no right yet, only a hope, so a promise to give up her share transfers nothing.</div>
+  <div class="foot"><span>Relinquishment of Inheritance by Muslim Women in Bangladesh</span><span>4</span></div>
+</section>
+
+<!-- 5 STATUTES -->
+<section class="slide light">
+  <div class="eyebrow">Statutes of Bangladesh</div>
+  <h2>The statutes protect the same share</h2>
+  <table>
+    <tr><th style="width:30%">Statute</th><th style="width:16%">Section</th><th>Rule</th></tr>
+    <tr><td>Shariat Application Act 1937</td><td>s. 2</td><td>Muslim law governs succession and gifts (excludes agricultural land)</td></tr>
+    <tr><td>Civil Courts Act 1887</td><td>s. 37</td><td>Muslim law governs inheritance, including agricultural land</td></tr>
+    <tr><td>Transfer of Property Act 1882</td><td>s. 6(a)</td><td>The chance of inheriting cannot be transferred</td></tr>
+    <tr><td>Registration Act 1908</td><td>ss. 17, 49</td><td>A release of a right in land must be registered, whatever its value</td></tr>
+    <tr><td>Registration Act 1908</td><td>s. 78A(b)</td><td>Heba between full brothers and sisters: Tk 100 registration fee</td></tr>
+    <tr><td>Contract Act 1872</td><td>ss. 16–19A</td><td>A deed obtained by undue influence is voidable</td></tr>
+    <tr><td>Contract Act 1872</td><td>s. 16(3)</td><td>A dominant party in an unconscionable bargain must disprove undue influence</td></tr>
+  </table>
+  <div class="foot"><span>Relinquishment of Inheritance by Muslim Women in Bangladesh</span><span>5</span></div>
+</section>
+
+<!-- 6 PRACTICAL REALITY -->
+<section class="slide light">
+  <div class="eyebrow">Practical Reality</div>
+  <h2>In practice, the share often goes to the brother</h2>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:28px">
+    <div class="card g"><div class="big" style="color:var(--gold);font-size:62px">12% vs 69%</div><p style="margin-top:14px;font-size:20px">rural women vs men who own agricultural land</p><div class="src">Badabon Sangho (2024)</div></div>
+    <div class="card g"><div class="big" style="color:var(--gold);font-size:62px">1 in 4</div><p style="margin-top:14px;font-size:20px">women who inherited land later lost it, mostly selling to brothers far below market price</p><div class="src">Badabon Sangho (2024)</div></div>
+    <div class="card g"><div class="big" style="color:var(--gold);font-size:62px">15.8%</div><p style="margin-top:14px;font-size:20px">of rural household land is owned by women</p><div class="src">Barkat (2015)</div></div>
+  </div>
+  <div class="label">Why Sisters Give It Up</div>
+  <ul class="dot">
+    <li>Family pressure: “Usually the sisters cannot refuse.”</li>
+    <li>Fear of losing her place in the father’s home</li>
+    <li>Dowry treated as her share</li>
+    <li>Brothers keep the documents; mutation is delayed</li>
+  </ul>
+  <div class="foot"><span>Relinquishment of Inheritance by Muslim Women in Bangladesh</span><span>6</span></div>
+</section>
+
+<!-- 7 CASE LAW BEFORE DEATH -->
+<section class="slide light">
+  <div class="eyebrow">Case Law · Renunciation Before Death</div>
+  <h2>India: a token payment may bind her</h2>
+  <table style="margin-bottom:26px">
+    <tr><th style="width:27%">Case</th><th style="width:25%">Court and year</th><th>Holding</th></tr>
+    <tr><td>Asa Beevi v. Karuppan</td><td>Madras HC (Full Bench), 1918</td><td>Renunciation of a future share is wholly void</td></tr>
+    <tr><td>Gulam Abbas v. Haji Kayyum Ali, AIR 1973 SC 554</td><td>Supreme Court of India, 1972</td><td>A bare renunciation does not bind; but an heir who took money may be estopped (Evidence Act, s. 115)</td></tr>
+    <tr><td>Shehammal v. Hasan Khani Rawther, AIR 2011 SC 3609</td><td>Supreme Court of India, 2011</td><td>Followed Gulam Abbas: consideration or family settlement estops the heir</td></tr>
+  </table>
+  <div class="callout"><b>Result</b>Under the Indian approach, a sister who accepted even a small sum may lose her claim.</div>
+  <div class="foot"><span>Relinquishment of Inheritance by Muslim Women in Bangladesh</span><span>7</span></div>
+</section>
+
+<!-- 8 CASE LAW AFTER DEATH -->
+<section class="slide light">
+  <div class="eyebrow">Case Law · After Death and Under Pressure</div>
+  <h2>Pakistan: relinquishment is against Islamic public policy</h2>
+  <div class="grid" style="grid-template-columns:1fr 1fr;gap:30px">
+    <div class="card g" style="padding:32px">
+      <div class="label">Pakistan · PLD 1990 SC 1</div>
+      <h3 style="font-size:30px;margin-bottom:18px">Ghulam Ali v. Ghulam Sarwar Naqvi</h3>
+      <ul class="dot" style="color:var(--cream)">
+        <li style="font-size:21px">A sister was denied her share by her three brothers</li>
+        <li style="font-size:21px">The estate passes to heirs automatically and immediately</li>
+        <li style="font-size:21px">No brother can stand as an intermediary</li>
+        <li style="font-size:21px">A woman’s relinquishment is against public policy as understood in Islam</li>
+      </ul>
+    </div>
+    <div class="card" style="padding:32px">
+      <div class="label">India · AIR 1963 SC 1203</div>
+      <h3 style="font-size:30px;margin-bottom:18px">Kharbuja Kuer v. Jangbahadur Rai</h3>
+      <ul class="dot">
+        <li style="font-size:21px">Deed signed by a pardanashin woman</li>
+        <li style="font-size:21px">Whoever relies on it must prove she understood it</li>
+        <li style="font-size:21px">It must be “not only her physical act but also her mental act”</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span>Relinquishment of Inheritance by Muslim Women in Bangladesh</span><span>8</span></div>
+</section>
+
+<!-- 9 BANGLADESH CASES -->
+<section class="slide light">
+  <div class="eyebrow">Case Law · Bangladesh</div>
+  <h2>Bangladesh: supporting principles, no direct ruling</h2>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:28px">
+    <div class="card"><h3 style="font-size:24px">Nantu v. Shamsun Nahar</h3><div class="src" style="margin:0 0 12px;font-style:normal">HCD, First Appeal 2 of 2021 (2025)</div><p>Registered heba deeds signed by an elderly, illiterate mother told she was signing for a sale: cancellation upheld</p></div>
+    <div class="card"><h3 style="font-size:24px">Jahanara Begum v. Hazi Nizamuddin</h3><div class="src" style="margin:0 0 12px;font-style:normal">AD, Civil Appeal 133 of 2023 (2024)</div><p>“Neither inaction nor silence can be the basis of implied consent”</p></div>
+    <div class="card"><h3 style="font-size:24px">Jinna Miah v. Mosarrof Hossen</h3><div class="src" style="margin:0 0 12px;font-style:normal">HCD, First Appeal 49 of 2021 (2026)</div><p>An oral heba of land gave no title</p></div>
+  </div>
+  <div class="callout"><b>Research Gap</b>We found no reported Bangladeshi judgment deciding a sister’s relinquishment directly.</div>
+  <div class="foot"><span>Relinquishment of Inheritance by Muslim Women in Bangladesh</span><span>9</span></div>
+</section>
+
+<!-- 10 ANALYSIS -->
+<section class="slide light">
+  <div class="eyebrow">Analysis</div>
+  <h2>The law protects her at two stages, not at the third</h2>
+  <table style="margin-bottom:24px">
+    <tr><th style="width:24%">Stage</th><th style="width:25%">Sharia</th><th style="width:25%">Statute</th><th>Is she protected?</th></tr>
+    <tr><td>1. Promise before death</td><td>No right exists; nothing passes</td><td>TPA s. 6(a): no transfer</td><td>Yes, unless estoppel is applied</td></tr>
+    <tr><td>2. “I don’t want my share” after death</td><td>Inheritance is compulsory</td><td>Registration Act ss. 17, 49</td><td>Yes: no legal effect</td></tr>
+    <tr><td>3. Registered release, sale or heba</td><td>Valid only with free consent and real value</td><td>Presumed valid; she must sue, usually within 3 years</td><td>Weakly: the burden is on her</td></tr>
+  </table>
+  <div class="callout"><b>The Gap</b>Sharia asks whether she truly consented. The statute asks whether the deed was registered.</div>
+  <div class="foot"><span>Relinquishment of Inheritance by Muslim Women in Bangladesh</span><span>10</span></div>
+</section>
+
+<!-- 11 RECOMMENDATIONS -->
+<section class="slide light">
+  <div class="eyebrow">Our Recommendations</div>
+  <h2 style="margin-bottom:22px">Test her consent before her share passes</h2>
+  <div class="rec"><div class="n">1</div><div><h3>Safeguards at registration</h3><p>The sub-registrar explains the deed privately and records the value she receives</p></div></div>
+  <div class="rec"><div class="n">2</div><div><h3>A legal presumption</h3><p>Undue influence is presumed when she transfers to a male co-heir far below market value</p></div></div>
+  <div class="rec"><div class="n">3</div><div><h3>No estoppel for token payments</h3><p>Courts follow the reasoning in Ghulam Ali</p></div></div>
+  <div class="rec"><div class="n">4</div><div><h3>Every heir on the record</h3><p>Mutation lists each heir and her share in her own name</p></div></div>
+  <div class="rec"><div class="n">5</div><div><h3>Legal aid and awareness</h3><p>Women learn their share cannot be lost by silence or a promise</p></div></div>
+  <div class="foot"><span>Relinquishment of Inheritance by Muslim Women in Bangladesh</span><span>11</span></div>
+</section>
+
+<!-- 12 CONCLUSION -->
+<section class="slide dark concl">
+  <div class="eyebrow">Conclusion</div>
+  <div class="stmt">She cannot lose her share by a promise or a statement, but she can lose it by a registered deed signed under pressure.</div>
+  <p>Sharia already demands free consent and real value. Our law should demand the same before a woman’s share passes to her brother.</p>
+  <div class="foot"><span>Relinquishment of Inheritance by Muslim Women in Bangladesh</span><span>12</span></div>
+</section>
+
+<!-- 13 THANK YOU + REFERENCES -->
+<section class="slide dark thanks">
+  <h2>Thank you</h2>
+  <div class="q">Questions are welcome</div>
+  <div class="nm">Arian Islam · Zakaria<br>Rezwana Faiza Maliha · Syed Almas Uddin Razin</div>
+  <div class="eyebrow" style="margin-bottom:12px">References</div>
+  <ul>
+    <li>Quran 4:7, 4:11–14, 4:29, 4:176; Ibn Abidin, Radd al-Muhtar</li>
+    <li>Shariat Application Act 1937, s. 2; Civil Courts Act 1887, s. 37</li>
+    <li>Transfer of Property Act 1882, s. 6(a); Registration Act 1908, ss. 17, 49, 78A</li>
+    <li>Contract Act 1872, ss. 16–19A; Evidence Act 1872, ss. 111, 115</li>
+    <li>Gulam Abbas v. Haji Kayyum Ali, AIR 1973 SC 554</li>
+    <li>Shehammal v. Hasan Khani Rawther, AIR 2011 SC 3609</li>
+    <li>Kharbuja Kuer v. Jangbahadur Rai, AIR 1963 SC 1203</li>
+    <li>Ghulam Ali v. Ghulam Sarwar Naqvi, PLD 1990 SC 1</li>
+    <li>Nantu v. Shamsun Nahar, HCD, FA 2 of 2021 (2025); Jahanara Begum v. Hazi Nizamuddin, AD, CA 133 of 2023 (2024); Jinna Miah v. Mosarrof Hossen, HCD, FA 49 of 2021 (2026)</li>
+    <li>Barkat (2015); Badabon Sangho (2024)</li>
+  </ul>
+  <div class="foot"><span>Relinquishment of Inheritance by Muslim Women in Bangladesh</span><span>13</span></div>
+</section>
+
+</div></div>
+
+<div class="nav">
+  <button id="prev" aria-label="Previous">◀</button>
+  <span id="count"></span>
+  <button id="next" aria-label="Next">▶</button>
+  <button id="fs" aria-label="Fullscreen">⛶</button>
+</div>
+
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var stage=document.getElementById('stage');
+  var count=document.getElementById('count');
+  var bar=document.getElementById('bar');
+  var i=0;
+  function fit(){
+    var s=Math.min(window.innerWidth/1456,window.innerHeight/818);
+    stage.style.transform='scale('+s+')';
+  }
+  function show(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach(function(s,k){s.classList.toggle('active',k===i)});
+    count.textContent=(i+1)+' / '+slides.length;
+    bar.style.width=((i+1)/slides.length*100)+'%';
+    if(history.replaceState)history.replaceState(null,'','#'+(i+1));
+  }
+  function next(){show(i+1)} function prev(){show(i-1)}
+  document.getElementById('next').onclick=next;
+  document.getElementById('prev').onclick=prev;
+  document.getElementById('fs').onclick=function(){
+    if(!document.fullscreenElement)document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen();
+    else document.exitFullscreen&&document.exitFullscreen();
+  };
+  document.addEventListener('keydown',function(e){
+    var k=e.key;
+    if(k==='ArrowRight'||k==='ArrowDown'||k==='PageDown'||k===' '){e.preventDefault();next()}
+    else if(k==='ArrowLeft'||k==='ArrowUp'||k==='PageUp'){e.preventDefault();prev()}
+    else if(k==='Home')show(0);
+    else if(k==='End')show(slides.length-1);
+    else if(k==='f'||k==='F')document.getElementById('fs').click();
+  });
+  var x0=null;
+  document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  document.addEventListener('touchend',function(e){
+    if(x0===null)return;
+    var dx=e.changedTouches[0].clientX-x0;
+    if(Math.abs(dx)>50){dx<0?next():prev()}
+    x0=null;
+  });
+  window.addEventListener('resize',fit);
+  fit();
+  show((parseInt(location.hash.slice(1),10)||1)-1);
+})();
+</script>
+</body>
+</html>
